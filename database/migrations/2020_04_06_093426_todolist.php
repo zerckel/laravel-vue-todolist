@@ -13,7 +13,7 @@ class Todolist extends Migration
      */
     public function up()
     {
-        Schema::create('Tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->text('task');
