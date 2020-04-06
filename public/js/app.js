@@ -13962,7 +13962,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  created: function created() {
+  mounted: function mounted() {
     this.getTask();
   }
 });
@@ -31583,7 +31583,7 @@ var render = function() {
       }
     },
     [
-      _c("header", [
+      _c("header", { staticStyle: { width: "85vw", margin: "0 auto" } }, [
         _c("h1", { staticStyle: { "text-align": "center" } }, [
           _vm._v("\n            To-do-list\n        ")
         ]),
@@ -31668,11 +31668,20 @@ var render = function() {
             _vm._l(_vm.tasks, function(task) {
               return _c(
                 "li",
-                { staticStyle: { "background-color": "white" } },
+                {
+                  staticStyle: {
+                    "background-color": "white",
+                    display: "flex",
+                    "justify-content": "space-between",
+                    padding: "5px 10px",
+                    "border-bottom": "solid 1px lightgrey",
+                    "align-items": "center"
+                  }
+                },
                 [
-                  _vm._v(
-                    "\n                " + _vm._s(task.task) + "\n            "
-                  )
+                  _c("span", [_vm._v(_vm._s(task.task))]),
+                  _vm._v(" "),
+                  _vm._m(0, true)
                 ]
               )
             }),
@@ -31683,7 +31692,19 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Modify")]),
+      _c("button", { staticClass: "btn btn-primary alert-danger" }, [
+        _vm._v("Delete")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

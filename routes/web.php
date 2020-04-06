@@ -13,5 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+Route::get('/', 'SpaController@index');
 Route::get('/task/get', 'api@getAll');
+Route::get('/task/add/{task}', 'api@add');

@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 class api extends Controller
 {
     public function getAll(){
-        return DB::table('tasks')->get();
+        return DB::select("SELECT * FROM tasks");
+    }
+    public function add(){
+
     }
 }

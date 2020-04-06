@@ -1,7 +1,7 @@
 <template>
     <div
         style="margin: 5vh 20px;height: 90vh; background-color: whitesmoke ; border-radius: 10px; display: flex;  flex-direction: column; font-family: monospace; padding: 5px 10px">
-        <header>
+        <header style="width: 85vw; margin: 0 auto">
             <h1 style="text-align: center">
                 To-do-list
             </h1>
@@ -20,8 +20,8 @@
                 Task lists
             </h2>
             <ul style="list-style: none">
-                <li v-for="task in tasks" style="background-color: white">
-                    {{ task.task }}
+                <li v-for="task in tasks" style="background-color: white; display: flex; justify-content: space-between; padding: 5px 10px;border-bottom: solid 1px lightgrey ; align-items: center">
+                    <span>{{ task.task }}</span> <div><button class="btn btn-primary">Modify</button><button class="btn btn-primary alert-danger">Delete</button></div>
                 </li>
             </ul>
         </div>
@@ -65,7 +65,7 @@
                     })
             }
         },
-        created() {
+        mounted() {
             this.getTask()
         }
     }

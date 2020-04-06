@@ -17,7 +17,7 @@ class task extends Seeder
         DB::table('tasks')->insert([
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now(),
-            'task' => $faker->text()
+            'task' => $faker->text(10)
         ]);
     }
 }
