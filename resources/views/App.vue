@@ -1,72 +1,13 @@
 <template>
-    <div
-        style="margin: 5vh 20px;height: 90vh; background-color: whitesmoke ; border-radius: 10px; display: flex;  flex-direction: column; font-family: monospace; padding: 5px 10px">
+    <div style="margin: 5vh 20px;height: 90vh; background-color: whitesmoke ; border-radius: 10px; display: flex;  flex-direction: column; font-family: monospace; padding: 5px 10px">
         <header style="width: 85vw; margin: 0 auto">
             <h1 style="text-align: center">
                 To-do-list
             </h1>
-            <form style="width: 80vw; display: flex; align-items: center">
-                <div class="form-group">
-                    <label for="exampleInputEmail1"></label>
-                    <input v-model="newTask" type="email" class="form-control" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="Enter a task..">
-                </div>
-                <button @click="addTask" type="button" class="btn btn-primary">Add</button>
-            </form>
         </header>
-
-        <div style="width: 100%; border-radius: 10px; display: flex; justify-content: center; flex-direction: column; ">
-            <h2 style="text-align: center; margin-bottom: 10px">
-                Task lists
-            </h2>
-            <ul style="list-style: none">
-                <li v-for="task in tasks" style="background-color: white; display: flex; justify-content: space-between; padding: 5px 10px;border-bottom: solid 1px lightgrey ; align-items: center">
-                    <span>{{ task.task }}</span> <div><button class="btn btn-primary">Modify</button><button class="btn btn-primary alert-danger">Delete</button></div>
-                </li>
-            </ul>
-        </div>
-
-        <!--        <p>
-                    <router-link :to="{ name: 'home' }"> Wsh </router-link>
-                    <router-link :to="{ name: 'hello' }"> Hello </router-link>
-                </p>
-                <div class="container">
-                    <router-view></router-view>
-                </div>-->
+        <router-view></router-view>
     </div>
 </template>
 <script>
-    export default {
-        name: 'app',
-        data() {
-            return {
-                newTask: '',
-                message: '',
-                tasks:{
-
-                }
-            }
-        },
-        methods: {
-            addTask: function () {
-                if (this.newTask !== "") {
-                    fetch('/task/add/' + this.newTask)
-                        .then((res) => res.json())
-                        .then((data) => {
-                            this.message = data
-                        })
-                }
-            },
-            getTask:function () {
-                fetch('/task/get')
-                    .then((res) => res.json())
-                    .then((data) => {
-                        this.tasks = data
-                    })
-            }
-        },
-        mounted() {
-            this.getTask()
-        }
-    }
+    export default {}
 </script>

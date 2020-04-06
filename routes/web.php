@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'SpaController@index');
+
+Route::get('/task/get/{id}', 'api@getOne');
+
 Route::get('/task/get', 'api@getAll');
+
 Route::get('/task/add/{task}', 'api@add');
+
+Route::get('/task/delete/{id}', 'api@delete');
+
+Route::get('/task/update/{id}/{task}', 'api@update');
