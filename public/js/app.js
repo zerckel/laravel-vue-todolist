@@ -31585,7 +31585,7 @@ var render = function() {
     [
       _c("header", [
         _c("h1", { staticStyle: { "text-align": "center" } }, [
-          _vm._v("\n            Laravel Vue Todolist\n        ")
+          _vm._v("\n            To-do-list\n        ")
         ]),
         _vm._v(" "),
         _c(
