@@ -3,7 +3,7 @@
         style="margin: 5vh 20px;height: 90vh; background-color: whitesmoke ; border-radius: 10px; display: flex;  flex-direction: column; font-family: monospace; padding: 5px 10px">
         <header>
             <h1 style="text-align: center">
-                Laravel Vue Todolist
+                To-do-list
             </h1>
             <form style="width: 80vw; display: flex; align-items: center">
                 <div class="form-group">
